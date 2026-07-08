@@ -11,6 +11,10 @@ dt-launchfile-init
 # NOTE: Use the variable DT_REPO_PATH to know the absolute path to your code
 # NOTE: Use `dt-exec COMMAND` to run the main process (blocking process)
 
+# Make catkin packages discoverable by roslaunch / rospack.
+# template-basic does not run catkin_make, so we register them manually.
+export ROS_PACKAGE_PATH="${DT_REPO_PATH}/packages:${ROS_PACKAGE_PATH}"
+
 # Set vehicle name fallback for DTS usage.
 # Prefer VEHICLE_NAME, then ROBOT_NAME, then HOSTNAME.
 export VEHICLE_NAME=${VEHICLE_NAME:-${ROBOT_NAME:-${HOSTNAME:-duckiebot}}}
