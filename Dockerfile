@@ -15,7 +15,7 @@ ARG BASE_TAG=${DISTRO}-${ARCH}
 ARG LAUNCHER=default
 
 # define base image
-FROM ${DOCKER_REGISTRY}/duckietown/${BASE_IMAGE}:${BASE_TAG} as base
+FROM ${DOCKER_REGISTRY}/duckietown/${BASE_IMAGE}:${BASE_TAG} AS base
 
 # recall all arguments
 ARG DISTRO

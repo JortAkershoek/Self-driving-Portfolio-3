@@ -15,6 +15,9 @@ dt-launchfile-init
 # template-basic does not run catkin_make, so we register them manually.
 export ROS_PACKAGE_PATH="${DT_REPO_PATH}/packages:${ROS_PACKAGE_PATH}"
 
+# Force rospack to re-index so it discovers packages under the updated path.
+rospack profile
+
 # Set vehicle name fallback for DTS usage.
 # Prefer VEHICLE_NAME, then ROBOT_NAME, then HOSTNAME.
 export VEHICLE_NAME=${VEHICLE_NAME:-${ROBOT_NAME:-${HOSTNAME:-duckiebot}}}
